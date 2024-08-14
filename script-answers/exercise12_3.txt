@@ -1,0 +1,13 @@
+docker start -i eager_montalcini
+cd usr
+cd src
+cd app
+
+apt-get update
+apt-get -y install nano
+nano /usr/src/app/index.js
+
+console.log('Hello World')
+control + o
+enter
+control + x
