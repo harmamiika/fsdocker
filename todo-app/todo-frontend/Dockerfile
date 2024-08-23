@@ -1,3 +1,9 @@
+# FROM node:20 AS test-stage
+# WORKDIR /usr/src/app
+# COPY . .
+# RUN npm ci
+
+
 # The first FROM is now a stage called build-stage
 FROM node:20 AS build-stage 
 
@@ -8,6 +14,8 @@ COPY . .
 ENV VITE_BACKEND_URL=http://localhost:3000
 
 RUN npm ci
+
+RUN npm test
 
 RUN npm run build
 
